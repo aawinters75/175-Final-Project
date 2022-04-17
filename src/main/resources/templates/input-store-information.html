@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
-<title>Add a Comic Store</title>
+<title>Create a new store</title>
 </head>
 <body>
 <div class="container">
@@ -37,27 +37,48 @@
         return false;
       }
     if(form.phoneNum.value == "") {
-        alert("Error: Phone number is empty!");
-        form.phoneNum.focus();
+        alert("Error: Phone Number is empty!");
+        form.yearPub.focus();
         return false;
     }
     
+    // regular expression to match only alphanumeric characters and spaces
+    var re = /^[\w ]+$/;
+
+    // validation fails if the input doesn't match our regular expression
+    if(!re.test(form.storeName.value)) {
+      alert("Error: storeName contains invalid characters!");
+      form.storeName.focus();
+	return false;
+    }
+
+    if(!re.test(form.state.value)) {
+        alert("Error: State contains invalid characters!");
+        form.state.focus();
+  	return false;
+      }
+
+    if(!re.test(form.zipCode.value)) {
+        alert("Error: Zip Code contains invalid characters!");
+        form.illustrator.focus();
+  	return false;
+      }
+    // validation was successful
+    return true;
   }
+    
 </script>
 <form 
 th:object="${newStore}" th:action="@{/updateStore/{id}(id=${newStore.id})}" method='POST' onsubmit = "return checkForm(this);">
-Store Name: <input name = "storeName" size="20" th:field="*{storeName}"><br />
+Store Name: <input name = "storeName" size="10" th:field="*{storeName}"><br />
 Street Address: <input name = "streetAddress"size="20" th:field="*{streetAddress}"><br />
 City: <input name="city" size="20" th:field="*{city}"><br />  
 State: <input name = "state" size="2" th:field="*{state}"><br /> 
-Zip Code: <input name = "zipCode" size="12" th:field="*{zipCode}"><br />
-Phone Number: <input name="phoneNum" size="3" placeholder="555" th:field="*{phoneNum}">
-<input name="phoneNum" size="3" placeholder="555" th:field="*{phoneNum}">
-<input name="phoneNum" size="4" placeholder="5555" th:field="*{phoneNum}">
-<br />
-<input type = "submit" value="Add Comic">
+zipCode: <input name = "zipCode" size="5" th:field="*{zipCode}"><br />
+Phone Number: <input name="phoneNum" size="10" th:field="*{phoneNum}"><br />
+<input type = "submit" value="Add Store">
 </form> <br />
-<a href="../viewAll">View all Comics</a>
+<a href="../viewAll">View all Stores</a>
 </div>
 </body>
 </html>

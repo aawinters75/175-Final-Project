@@ -69,16 +69,18 @@
     
 </script>
 <form 
+
 th:object="${newComic}" th:action="@{/update/{id}(id=${newComic.id})}" method='POST' onsubmit = "return checkForm(this);">
 Publisher: <input name = "publisher" size="10" th:field="*{publisher}"><br />
 Series: <input name = "seriesTitle"size="10" th:field="*{seriesTitle}"><br />
 Issue Number: <input name="issuNum" size="20" th:field="*{issueNum}"><br />  
 Author: <input name = "author" size="15" th:field="*{author}"><br /> 
 Illustrator: <input name = "illustrator" size="15" th:field="*{illustrator}"><br />
-Year Published: <input name="yearPub" size="10" placeholder="1974" th:field="*{yearPub}"><br />
+Year Published: <input name="yearPub" placeholder="1974" size="10" th:field="*{yearPub}"><br />
 <input type = "submit" value="Add Comic">
 </form> <br />
-<a href="../viewAll">View all Comics</a>
+<a href="/viewAllComics">View all Comics</a>
+<a href="../selection">Return to Home</a>
 </div>
 </body>
 </html>
