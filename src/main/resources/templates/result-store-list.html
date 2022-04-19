@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Available Vendors</title>
+</head>
+<body>
+<form>
+<table>
+<tr th:each="currentStore : ${stores}" >
+<td th:text="${currentStore.id}" />
+<td th:text="${currentStore.storeName}" />
+<td th:text="${currentStore.streetAddress}" />
+<td th:text="${currentStore.city}" />
+<td th:text="${currentStore.state}" />
+<td th:text="${currentStore.zipCode}" />
+<td th:text="${currentStore.phoneNumber}" />
+<td th:text="${currentComic.yearPub}" />
+<td><a th:href="@{/editStore/{id}(id=${currentStore.id})}">Edit Store</a></td>
+<td><a th:href="@{/deleteComic/{id}(id=${currentComic.id})}">Delete Store</a></td>
+</tr>
+</table>
+</form>
+<a href="../input-comic-information">Add a new comic</a>
+</body>
+</html>
+
+<!--private long id;
+	private String storeName;
+	private String streetAddress;
+	private String city;
+	private String state;
+	private String zipCode;
+	private String phoneNum; -->
