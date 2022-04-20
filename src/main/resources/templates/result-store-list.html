@@ -17,11 +17,11 @@
 <td th:text="${currentStore.phoneNumber}" />
 <td th:text="${currentComic.yearPub}" />
 <td><a th:href="@{/editStore/{id}(id=${currentStore.id})}">Edit Store</a></td>
-<td><a th:href="@{/deleteComic/{id}(id=${currentComic.id})}">Delete Store</a></td>
+<td><a th:href="@{/deleteStore/{id}(id=${currentStore.id})}">Delete Store</a></td>
 </tr>
 </table>
 </form>
-<a href="../input-comic-information">Add a new comic</a>
+<a href="../input-store-information">Add a new Vendor</a>
 </body>
 </html>
 
