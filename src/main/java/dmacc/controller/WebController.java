@@ -92,7 +92,7 @@ public class WebController {
 		return selection(model);
 	}
 	
-	@GetMapping("/viewAllComics")
+	@GetMapping("/result-comic-list")
 	public String viewAllComics(Model model) {
 		if(repo.findAll().isEmpty()) {
 			return viewAllComics(model);
@@ -134,7 +134,7 @@ public class WebController {
 		repo2.delete(s);
 		return selection2(model);
 	}
-	@GetMapping("/viewAllStores")
+	@GetMapping("/result-store-list")
 	public String viewAllStores(Model model) {
 		if(repo2.findAll().isEmpty()) {
 			return viewAllStores(model);
@@ -176,7 +176,7 @@ public class WebController {
 		return selection3(model);
 	}
 	
-	@GetMapping("/viewAllUsers")
+	@GetMapping("/result-user-list")
 	public String viewAllUsers(Model model) {
 		if(repo3.findAll().isEmpty()) {
 			return viewAllUsers(model);
