@@ -8,6 +8,7 @@
 <form>
 <table>
 <tr th:each="currentStore : ${newStores}" >
+<td><input type="radio" name="id" value="${currentStore.id}"></td>
 <td th:text="${currentStore.id}" />
 <td th:text="${currentStore.storeName}" />
 <td th:text="${currentStore.streetAddress}" />

@@ -8,6 +8,7 @@
 <form>
 <table>
 <tr th:each="currentUser : ${newUsers}" >
+<td><input type="radio" name="id" value="${currentUser.id}"></td>
 <td th:text="${currentUser.id}" />
 <td th:text="${currentUser.userName}" />
 <td th:text="${currentUser.fName}" />
