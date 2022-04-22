@@ -7,21 +7,21 @@
 <body>
 <form>
 <table>
-<tr th:each="currentStore : ${stores}" >
+<tr th:each="currentStore : ${newStores}" >
 <td th:text="${currentStore.id}" />
 <td th:text="${currentStore.storeName}" />
 <td th:text="${currentStore.streetAddress}" />
 <td th:text="${currentStore.city}" />
 <td th:text="${currentStore.state}" />
 <td th:text="${currentStore.zipCode}" />
-<td th:text="${currentStore.phoneNumber}" />
-<td th:text="${currentComic.yearPub}" />
+<td th:text="${currentStore.phoneNum}" />
 <td><a th:href="@{/editStore/{id}(id=${currentStore.id})}">Edit Store</a></td>
 <td><a th:href="@{/deleteStore/{id}(id=${currentStore.id})}">Delete Store</a></td>
 </tr>
 </table>
 </form>
-<a href="../input-store-information">Add a new Vendor</a>
+<a href="../input-store-information">Add a new Vendor</a><br />
+<a href="../selection">Return to Home</a>
 </body>
 </html>
 

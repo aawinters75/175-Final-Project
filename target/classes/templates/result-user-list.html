@@ -7,7 +7,7 @@
 <body>
 <form>
 <table>
-<tr th:each="currentUser : ${Users}" >
+<tr th:each="currentUser : ${newUsers}" >
 <td th:text="${currentUser.id}" />
 <td th:text="${currentUser.userName}" />
 <td th:text="${currentUser.fName}" />
@@ -16,14 +16,15 @@
 <td th:text="${currentUser.city}" />
 <td th:text="${currentUser.state}" />
 <td th:text="${currentUser.zipCode}" />
-<td th:text="${currentUser.phoneNumber}" />
+<td th:text="${currentUser.phoneNum}" />
 
 <td><a th:href="@{/editUser/{id}(id=${currentUser.id})}">Edit Collector</a></td>
 <td><a th:href="@{/deleteUser/{id}(id=${currentUser.id})}">Delete Collector</a></td>
 </tr>
 </table>
 </form>
-<a href="../input-user-information">Add a new Collector</a>
+<a href="../input-user-information">Add a new Collector</a><br />
+<a href="../selection">Return to Home</a>
 </body>
 </html>
 
