@@ -25,6 +25,7 @@ public class ComicBookInformation {
 	private String author;
 	private String illustrator;
 	private int yearPub;
+	private String price;
 	
 	@Autowired
 	private ComicList comicList;

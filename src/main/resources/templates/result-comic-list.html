@@ -16,6 +16,7 @@
 <td th:text="${currentComic.author}" />
 <td th:text="${currentComic.illustrator}" />
 <td th:text="${currentComic.yearPub}" />
+<td th:text="${currentComic.price}" />
 <td><a th:href="@{/editComic/{id}(id=${currentComic.id})}">Edit</a></td>
 <td><a th:href="@{/delete/{id}(id=${currentComic.id})}">Delete</a></td>
 </tr>

@@ -41,6 +41,11 @@
         form.yearPub.focus();
         return false;
     }
+    if(form.price.value == "") {
+        alert("Error: Price is empty!");
+        form.price.focus();
+        return false;
+    }
     
     // regular expression to match only alphanumeric characters and spaces
     var re = /^[\w ]+$/;
@@ -77,6 +82,7 @@ Issue Number: <input name="issuNum" size="20" th:field="*{issueNum}"><br />
 Author: <input name = "author" size="15" th:field="*{author}"><br /> 
 Illustrator: <input name = "illustrator" size="15" th:field="*{illustrator}"><br />
 Year Published: <input name="yearPub" placeholder="1974" size="10" th:field="*{yearPub}"><br />
+Price: <input name="price" placeholder="0.00" size="10" th:field="*{price}"><br />
 <input type = "submit" value="Add Comic">
 </form> <br />
 <a href="/result-comic-list">View all Comics</a><br />
